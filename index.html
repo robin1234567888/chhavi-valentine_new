@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love Chhavi ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.45);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            max-width: 420px;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);} 
+            to {opacity: 1; transform: translateY(0);} 
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .heart {
+            font-size: 35px;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.15); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        .countdown {
+            margin-top: 15px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            background: #ff4b5c;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff1e3c;
+        }
+
+        footer {
+            margin-top: 15px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="card">
+        <div class="heart">❤️</div>
+
+        <!-- Replace image URL with her photo link after uploading to repo -->
+        <img src="IMG_20260212_183346_570.jpg" alt="Chhavi">
+
+        <h1>My Dearest Chhavi</h1>
+        <p>
+            From the day you came into my life, everything became more beautiful. 
+            Your smile is my happiness, your love is my strength. 
+            I promise to always stand by you, protect you, and love you forever.
+        </p>
+
+        <div class="countdown" id="countdown"></div>
+
+        <button onclick="showMessage()">Click for a Surprise 💌</button>
+
+        <footer>Forever Yours, Robin ❤️</footer>
+    </div>
+
+    <script>
+        function showMessage() {
+            alert("Chhavi, you are my today and all of my tomorrows. I love you endlessly ❤️");
+        }
+
+        // Engagement Date (Change this date)
+        const engagementDate = new Date("April 19, 2026 00:00:00").getTime();
+        const countdown = document.getElementById("countdown");
+
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = engagementDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            countdown.innerHTML = "Our Engagement Countdown: " + days + " Days " + hours + " Hours " + minutes + " Minutes 💍";
+        }, 1000);
+    </script>
+
+</body>
+</html>
